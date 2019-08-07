@@ -1,0 +1,18 @@
+#cloud-config
+runcmd:
+- [ 'sh', '-c', 'sudo mkdir /etc/test_pramod']
+- printf "\n\n\n\n\nRunning Cloud Init commands\n"
+- printf "\n\nInstalling node and related apps\n"
+- sudo apt-get update -y
+- sudo apt-get install -y curl python-software-properties
+- curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+- git clone https://github.com/reddypramod85/weekly-pattern-5-dashboard.git
+- sudo apt-get install -y nodejs
+- printf "\n\nInstall createreact app\n"
+- sudo npm install -g yarnpkg
+- cd weekly-pattern-5-dashboard
+- sudo yarn install
+- printf "\n\starting app\n"
+- sudo yarn start
+- printf "\nyesFinished at $(date)\n\n\n\n\n"
+- [ 'sh', '-c', 'sudo mkdir /etc/test_pramod2']

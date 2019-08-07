@@ -1,0 +1,6 @@
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ClusterServiceBroker
+metadata:
+  name: grommet-broker
+spec:
+        url: http://3.86.206.101:8099
